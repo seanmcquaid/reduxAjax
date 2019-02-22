@@ -2,6 +2,7 @@ function weatherReducer(state = null,action){
     // switch = fancy/stupid if statement
     switch(action.type){
         case "GET_WEATHER":
+            console.log(action)
             return state;
         case "CLEAR_WEATHER":
             return null;
