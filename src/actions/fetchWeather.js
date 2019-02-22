@@ -7,7 +7,7 @@ const weatherUrl = `http://api.openweathermap.org/data/2.5/weather?units=imperia
 function fetchWeather(zipCode){
     console.log(zipCode)
     const data = axios.get(weatherUrl+zipCode)
-    // this promsie is being resolved automatically by the dispatcher
+    // this promise is being resolved automatically by the dispatcher
     return{
         type: "GET_WEATHER",
         payload : data

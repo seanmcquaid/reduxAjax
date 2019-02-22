@@ -5,7 +5,7 @@ import {connect} from "react-redux";
 // and the searchbar is a peer, not a parent
 class Weather extends Component {
     render(){
-        console.log(this.props.weatherData)
+        console.log(this.props)
         return(
             <h1>Weather</h1>
         )
