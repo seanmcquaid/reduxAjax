@@ -9,12 +9,19 @@ import {connect} from "react-redux";
 // because we need the dispatcher, we need bindActionCreators
 import {bindActionCreators} from "redux";
 import fetchWeather from "../actions/fetchWeather";
+import fetchStock from "../actions/fetchStock";
 
 class SearchBar extends Component {
     handleWeather = (event)=>{
       event.preventDefault();
       const zipCode = document.getElementById("weather-input").value;
       this.props.fetchWeather(zipCode);
+    }
+
+    handleStocks = (event)=>{
+      event.preventDefault();
+      const stock = document.getElementById("stock-input").value;
+      this.props.fetchStock(stock)
     }
     render(){
         return(
@@ -49,7 +56,8 @@ class SearchBar extends Component {
 // binds fetchWeather to the dispatcher
 function mapDispatchToProps(dispatcher){
   return bindActionCreators({
-    fetchWeather: fetchWeather
+    fetchWeather: fetchWeather,
+    fetchStock : fetchStock
   },dispatcher)
 }
 
